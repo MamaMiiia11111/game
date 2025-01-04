@@ -1,6 +1,4 @@
-<script>
-    // Анимация появления элементов при прокрутке
-    document.addEventListener('scroll', () => {
+      document.addEventListener('scroll', () => {
       const elements = document.querySelectorAll('.section');
       elements.forEach(el => {
         const rect = el.getBoundingClientRect();
