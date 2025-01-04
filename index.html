@@ -3,124 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Геймерский Сайт</title>
+  <title>Game Universe</title>
   <link rel="stylesheet" href="сайт.css">
 </head>
 <body>
 
-  <!-- Главное меню -->
-  <header>
-    <nav>
-      <ul class="menu">
+  <div class="wrapper">
+    <!-- Навигационная панель -->
+    <aside class="sidebar">
+      <h2>Меню</h2>
+      <ul class="nav">
         <li><a href="#home">Главная</a></li>
+        <li><a href="#about">О нас</a></li>
         <li><a href="#games">Игры</a></li>
         <li><a href="#news">Новости</a></li>
         <li><a href="#contact">Контакты</a></li>
       </ul>
-    </nav>
-    <h1 class="site-title">Геймерский Мир</h1>
-  </header>
+    </aside>
 
-  <!-- Основной контент -->
-  <main>
-    <section id="home" class="section">
-      <h2>Главная</h2>
-      <p>Добро пожаловать в наш геймерский сайт!</p>
-    </section>
+    <!-- Главный контент -->
+    <main class="main-content">
+      <section id="home" class="home-section">
+        <h1>Добро пожаловать в Game Universe!</h1>
+        <p>Ваш портал в мир игр и технологий. Откройте для себя невероятное!</p>
+      </section>
 
-    <section id="games" class="section">
-      <h2>Игры</h2>
-      <p>Здесь вы найдете самые популярные игры года!</p>
-      <div class="game-gallery">
-        <article class="game-item">
-          <img src="header.jpg" alt="Beholder 3">
-          <h3>Beholder 3: The Plague of Shadows</h3>
-          <p>Хоррор-игра с элементами исследования, головоломок и стелса.</p>
+      <section id="about" class="about-section">
+        <h2>О нас</h2>
+        <p>Мы создаем пространство для геймеров, где каждый найдет что-то для себя. Узнавайте о новинках, играйте в любимые проекты и общайтесь с единомышленниками.</p>
+      </section>
+
+      <section id="games" class="games-section">
+        <h2>Топ Игры</h2>
+        <div class="game-cards">
+          <div class="card">
+            <img src="game1.jpg" alt="Game 1">
+            <h3>Cyber Realm</h3>
+            <p>Окунитесь в футуристический мир с захватывающим сюжетом.</p>
+          </div>
+          <div class="card">
+            <img src="game2.jpg" alt="Game 2">
+            <h3>Ancient Quest</h3>
+            <p>Исследуйте древние руины и разгадуйте их секреты.</p>
+          </div>
+          <div class="card">
+            <img src="game3.jpg" alt="Game 3">
+            <h3>Star Explorers</h3>
+            <p>Станьте капитаном космического корабля и исследуйте галактику.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="news-section">
+        <h2>Свежие новости</h2>
+        <article class="news-item">
+          <h3>Вышла новая игра!</h3>
+          <p>Последний проект от Dream Studios уже доступен. Насладитесь невероятным игровым опытом.</p>
         </article>
-
-        <article class="game-item">
-          <img src="e3d22ffa-dbd7-4795-b5ee-a76dee60d40c.jpg" alt="63 Days">
-          <h3>63 Days</h3>
-          <p>Тактическая стратегия о событиях Варшавского восстания.</p>
+        <article class="news-item">
+          <h3>Турнир по киберспорту</h3>
+          <p>Регистрация на ежегодный чемпионат начинается завтра. Подробности на сайте.</p>
         </article>
+      </section>
 
-        <article class="game-item">
-          <img src="maxresdefault.jpg" alt="Hogwarts Legacy">
-          <h3>Hogwarts Legacy</h3>
-          <p>Игра по вселенной Гарри Поттера с открытым миром.</p>
-        </article>
+      <section id="contact" class="contact-section">
+        <h2>Связаться с нами</h2>
+        <form class="contact-form">
+          <label for="name">Ваше имя:</label>
+          <input type="text" id="name" name="name" placeholder="Введите имя">
 
-        <article class="game-item">
-          <img src="war_thunder.jpg" alt="War Thunder">
-          <h3>War Thunder</h3>
-          <p>Многопользовательская онлайн-игра с военной тематикой.</p>
-        </article>
-      </div>
-    </section>
+          <label for="email">Электронная почта:</label>
+          <input type="email" id="email" name="email" placeholder="Введите email">
 
-    <section id="news" class="section">
-      <h2>Новости</h2>
-      <ul class="news-list">
-        <li>Выход новой консоли Sony PlayStation 6.</li>
-        <li>Новая часть "The Legend of Zelda: Breath of the Wild 2".</li>
-        <li>Эксклюзивные игры для Xbox Series X/S.</li>
-        <li>Международные турниры по "Fortnite".</li>
-        <li>Крупное обновление "World of Warcraft".</li>
-      </ul>
-    </section>
+          <label for="message">Сообщение:</label>
+          <textarea id="message" name="message" placeholder="Ваше сообщение"></textarea>
 
-    <section id="registration" class="section">
-      <h2>Регистрация</h2>
-      <form id="registration-form">
-        <label for="username">Имя пользователя:</label>
-        <input type="text" id="username" name="username" required>
+          <button type="submit">Отправить</button>
+        </form>
+      </section>
+    </main>
+  </div>
 
-        <label for="email">Электронная почта:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Зарегистрироваться</button>
-      </form>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Контакты</h2>
-      <p>Телефон: +7 (744) 555-33<br>Электронная почта: hhgorhho@gmail.kz</p>
-    </section>
-  </main>
-
-  <!-- Подвал сайта -->
-  <footer>
-    <p>&copy; 2025 Геймерский Мир. Все права защищены.</p>
-  </footer>
-
-  <!-- Подключение скриптов -->
-  <script>
-    // Анимация меню
-    document.querySelectorAll('.menu a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-          window.scrollTo({
-            top: targetSection.offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Регистрация
-    const form = document.getElementById('registration-form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Регистрация успешно завершена!');
-    });
-  </script>
+  <!-- Подключение JavaScript -->
+  <script src="сайт.js"></script>
 </body>
 </html>
 
