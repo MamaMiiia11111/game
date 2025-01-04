@@ -1,23 +1,33 @@
-      document.addEventListener('scroll', () => {
-      const elements = document.querySelectorAll('.section');
-      elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
-          el.classList.add('visible');
-        } else {
-          el.classList.remove('visible');
-        }
-      });
-    });
+// Скрипт для анимации появления секций при прокрутке
+const sections = document.querySelectorAll('section');
 
-    // Отправка формы с выводом данных в консоль
-    const form = document.querySelector('.contact-form');
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      console.log(`Имя: ${name}, Email: ${email}, Сообщение: ${message}`);
-      alert('Спасибо за ваше сообщение!');
-      form.reset();
-    });
+const revealSections = () => {
+  const triggerHeight = window.innerHeight * 0.8;
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if (sectionTop < triggerHeight) {
+      section.classList.add('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', revealSections);
+
+// Инициализация анимации при загрузке
+window.addEventListener('load', revealSections);
+
+// Обработка формы контактов
+document.querySelector('.contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const name = e.target.elements['name'].value;
+  const email = e.target.elements['email'].value;
+  const message = e.target.elements['message'].value;
+
+  if (name && email && message) {
+    alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+    e.target.reset();
+  } else {
+    alert('Пожалуйста, заполните все поля формы.');
+  }
+});
